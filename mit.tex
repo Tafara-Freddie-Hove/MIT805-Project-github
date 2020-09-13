@@ -1,52 +1,66 @@
 
-\documentclass[11pt,twoside,conference]{IEEEtran}
+\documentclass[12pt,letterpaper, twoside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\renewcommand\IEEEkeywordsname{Keywords}
+\usepackage{dirtytalk}
 
-\title{Report on COVID-19 Public Media Dataset}
-\author{Tafara Freddie Hove(u18278150)}
+\title{Report on COVID-19 Open Data}
+\author{Tafara Freddie Hove \\
+        \small u18278150 \\
+}
+\date{} % Comment this line to show today's date
 
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1 
+}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-  The COVID-19 (coronavirus) disease has affected many lives and livelihoods globally. It has impacted on the socio-economic and psychological welfare of humanity.  The outbreak of the novel diseases also amplified information sharing on social networking platforms such as Twitter, Facebook and online articles. Public opinions and perceptions about the impact of COVID-19 on health, economy and  business are being shared on social networks and websites. The main object of this paper is to discuss the COVID-19 Public Media Dataset, which is a collection of online media articles on the novel coronavirus. The dataset will be described with reference to the 4V's characteristics of big data; variety, veracity, volume, and velocity ,and the collection and processing categories.The relationships and correlations that may be extracted from the data will be alluded.
-\end{abstract}
+  The COVID-19 (coronavirus) disease has affected many lives and livelihoods globally. It has impacted on the socio-economic and psychological welfare of humanity.  The main object of this paper is to discuss the COVID-19 Open Data, which is repository of of country-level datasets of daily time-series data about the novel coronavirus pandemic worldwide. The dataset discusses the impact of the virus and how different countries are responding to the pandemic. The dataset will be discussed with reference to the characteristics of big data; variety, veracity, volume, and velocity ,and the collection and processing categories.The relationships and correlations that may be extracted from the data will be alluded.
+\end{abstract}\hspace{10pt}
 
-\begin{IEEEkeywords}
-    COVID-19, Big Data, Characteristics, Categories
-\end{IEEEkeywords}
-
+\keywords{COVID-19, Coronavirus, Big Data, Characteristics, Categories}
+ 
 \section{Introduction}
-In response to the coronavirus crisis, Anacode research company prepared a COVID-19 Public Media Dataset.  The dataset can be used by researchers to generate meaningful insights and knowledge discovery to manage the coronavirus crisis. Both academia and global science community are using Natural Language Processing (NLP) and data mining techniques to analyse the overall impact, challenges and opportunities of the COVID-19 crisis \cite{Wang et al}. Hence Anacoda prepared a public  dataset for researchers to exploit the data and contribute in the fight against COVID-19. 
+
+The coronavirus disease 2019 (COVID-19)'s outbreak started in Wuhan, China and  rapidly spread worldwide. On March 11, 2020, the World Health Organization (WHO) announced that COVID-19 can be characterized as a pandemic\cite{Gao}. The novel coronavirus was named severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), while the disease associated with it is now referred to as COVID-19 \cite{Gao}. Since the beginning  of COVID-19 outbreak many organisations and government agencies have been collecting data related to the pandemic. Data has been published on Websites and social media platforms. The aim is to support researchers and medical professionals to monitor and understand the emergent of the pandemic.{Jahanbin} noted that many websites and online network platforms produce large amounts of data in a variety of fields on daily basis. If the data is analyzed and classified it can lead to the production of knowledge which can be used by researchers. 
+
 
 However the exponential increase in COVID-19 literature makes it difficult for researchers to retrieve quality information from very large and complex datasets. Online articles are published in large quantities on daily basis, increasing the size of data exponentially causing processing and data analysis problems. \cite{Patel et al} pointed out that processing and analysing huge and complex data, or extracting valuable and quality information from large datasets is a challenging task. Hence, the users of large and heterogeneous datasets must leverage AL-based techniques to extract meaningful information from such data archives \cite{Wang et al}. The use of advanced technological tools such as Hadoop MapReduce  and cloud computing applications can help to extract hidden insights from the dataset. 
- 
-\section{Dataset}
-The COVID-19 Public Media Dataset was prepared by Anacoda through text mining and information retrieval of COVID-19 online text documents. Approximately, more than 20 major English language domain websites were crawled for the timespan January 2020 to April 2020. The dataset is a resource of more than 200 000 media articles which explore non-medical impacts of COVID-19 to people.  This constitutes 2G of data.   It is a combination of four  full text datasets of comma separated values (CSV). The size and structure of the datasets makes it a Big Data. Hence, the traditional software cannot capture, analyse, store and process  the dataset in acceptable time bounds \cite{Patel et al}.
 
-The selected webs and filtered web domains include information  about coronavirus. The articles narrate the effects of the pandemic in the fields of technology, finance, business and the general impact it has cause to humanity except the medical impact. {Jahanbin} noted that many websites and online network platforms produce large amounts of data in a variety of fields on daily basis. If the data is analyzed and classified it can lead to the production of knowledge which can be used by researchers. 
+The aim of this research is to make use of the COVID-19 Open Data to assess and analyse how the COVID-19 crisis affects lives and livelihoods socially, economically, and psychologically. In addition, we need to find out if the crisis also brought in any opportunities to business, academia and research.  For instance, does the COVID-19 data brought in any new insights such as understanding, intelligence, knowledge, perspectives and ‘actionability’ on how to manage and create opportunities out of the crisis? In recent month we witnessed an increase in online trading, virtual meetings and learning.  Conversely, some of the expected outcomes from data analysis include economic decline, high levels of employment and poverty, and sharp increase in fake news and misinformation.
 
-The aim of this research is to make use of the dataset to assess and analyse how the COVID-19 crisis affects lives and livelihoods socially, economically, and psychologically. In addition, we need to find out if the crisis also brought in any opportunities to business, academia and research.  For instance, does the COVID-19 data brought in any new insights such as understanding, intelligence, knowledge, perspectives and ‘actionability’ on how to manage and create opportunities out of the crisis? In recent month we witnessed an increase in online trading, virtual meetings and learning.  Conversely, some of the expected outcomes from data analysis include economic decline, high levels of employment and poverty, and sharp increase in fake news and misinformation.
+The remainder of the paper is organized as described follows. In Section 2, we elaborate on the COVID-19 Open Data dataset. In Section 3, we provide a detailed overview of the dataset as Big Data with reference to the 4V's; variety, veracity, velocity and volume.  In Section 4, we present a big data architecture plan for our part 2 of this project. Finally, in Section 5, we present the conclusion.
+
+\section{Dataset} 
+The CoVID-19 Open Data is a huge dataset that consists of country-level datasets of daily time-series data about COVID-19 worldwide. The repository contains datasets of more tha 50 coutries around the world for the timespan February 2020 to date. It contains the latest available public data on COVID-19 including a daily situation update, the epidemiological curve and the global geographical distribution. The COVID-19 Open Data is available at https://github.com/GoogleCloudPlatform/covid-19-open-data.
+
+The COVID-19 Open Data is drawn from multiple sources including Wikidata, DataCommons, WorldBank, University of Oxford and Google. The data is stored in separate CSV and JSON files which are published in Google Cloud Storage. It is also part of the BigQuery Public Dataset Program. The collection of such huge quantities of files constitutes 1.01GB of data. 
+
+Since the beginning of the  COVID-19 distater, WHO's Epidemic Intelligence team has been collecting on daily basis the number of COVID-19 cases and deaths, based on reports from health authorities worldwide. Hence the dataset is a resource of multiple types of data outcomes(such as cases, deaths, tests), static covariate data (like population size, GDP, latitude/longitude), dynamic covariate data (like mobility and weather) and dynamic intervational data (such as government lockdowns regulations). 
+
 
 \section{Big Data}
-Big data refers to large and complex datasets of enormous size that cannot be stored and processed by conventional resources\cite{Grolinger}. The data can be structured, semi-structured or unstructured. \cite{Owais} argued that the volume, velocity and variety of data is too big making it difficult to store, capture, manage and process using conventional resources. The author further alluded that big data can be found anywhere, anytime and in anyplace which makes it hard to manage and analyse using traditional applications\cite{Owais}. Such data can be collected from sensors, machines, humans and business processes. Similarly the COVID-19 data is being generated globally through social media and online internet text documents, and  it continues to grow unabated. 
+Big data refers to large and complex datasets of enormous size that cannot be stored and processed by conventional resources\cite{Grolinger}. The data can be structured, semi-structured or unstructured. \cite{Owais} argued that the volume, velocity and variety of data is too big making it difficult to store, capture, manage and process using conventional resources. The author further alluded that big data can be found anywhere, anytime and in anyplace which makes it hard to manage and analyse using traditional applications\cite{Owais}. Such data can be collected from sensors, machines, humans and business processes. Similarly the COVID-19 Open Data is being generated globally through social media and online internet text documents, and  it continues to grow unabated. 
 
 \subsection{Characteristics and Categories of Big Data}
 The characteristics of big data are defined by many V's, but in this paper we discuss 4Vs which are volume, velocity, variety and veracity. According to \cite{Owais} there are five categories of big data which are extracted from the 9Vs. The data categories are collecting data, processing data, integrity data, visualization data and worth of data.  In this paper we only focus on collecting and processing data categories. 
 
 \subsubsection{Collecting Data}
-Data is generated and collected from different sources and  in different types. That makes data to be either structured or unstructured and complex. The two V's that make the collecting data category are variety and veracity. 
+Data is generated and collected from different sources and in different types.  Such data can be structured, semi-structured or even unstructured. That makes data to heterogeneous and complex. The two V's that make the collecting data category are variety and veracity. 
 
 \begin{itemize}
     \item Variety
     
-    Data can have multiple types and formats such as text, pdf, audio,excel,csv, tweets and images\cite{Johnson et al}. This reveals diversity of multiple data types. The COVID-19 Public Media dataset is a collection of  more than 200 000 internet text articles with CSV files, which consist of different data types and formats.  The metadata of articles include contexts, urls, dates and numbers. Such diversity in the dataset represents Big Data\cite{Johnson et al}. The collected data is not structured hence it cannot be stored into a relational database. The data must be rearranged  and reformatted to make it meaningful. Hence such variety in the data is defined as big data.
+    Data can have multiple types and formats such as text, pdf, audio,excel,csv, tweets and images\cite{Johnson et al}. This reveals diversity of multiple data types. The COVID-19 Open Data is a collection of  CSV and JSON files of different datasets, which are generated from different sources and locations across the world.  The metadata of articles include contexts, urls, dates and numbers. Such diversity in the dataset represents Big Data\cite{Johnson et al}. During the collection period the data was not in the traditional format, it was in multiple formats. The variety component of the COVID-19 data introduce heterogeneity and complexity which could impact on the quality of the dataset. Hence the data need to be rearranged  and reformatted to make it meaningful. Hence such variety in the data is defined as big data.
     
     \item Veracity
-    Big data veracity is the biases, noisy and the abnormality in the data \cite{Owais}. It involves the assessment of trustworthiness, authenticity, origin and reputation of the data. Data collected from different sources' quality may be compromised hence it must be carefully verified before put into use. \cite{Ishwarappa} pointed out that when dealing with large data its impossible for all of the data to be 100 percent correct, some data is dirty.Similarly, the COVID-19 Open Public Media dataset can also viewed as a data in doubt since it is generated by unconfirmed source. The data’s integrity, consistency and completeness must be analysed.The uncertainty and poor quality in the data would compromise the insights which must be leveraged from the data. The veracity of the data source guarantees the validity and accuracy of data analysis \cite{Ishwarappa}.
+    Big data veracity is the biases, noisy and the abnormality in the data \cite{Owais}. It involves the assessment of trustworthiness, authenticity, origin and reputation of the data. Data collected from different sources' quality may be compromised hence it must be carefully verified before put into use. Ishwarappa and Anuradha \cite{Ishwarappa} pointed out that when dealing with large data its impossible for all of the data to be 100 percent correct, some data is dirty. Thus, the data might have very high noise accumulation which may cause false correlation resulting in inconsistencies and false discoveries \cite{Grolinger}.  Similarly, the COVID-19 Open Data can also be viewed as a data in doubt since it is generated by many countries, with some regions not giving credible information. Hence the data’s integrity, consistency and completeness must be analysed effectively. Otherwise, the insight discoveries to be leveraged from the data would be compromised by poor quality data. The veracity of the data source guarantees the validity and accuracy of data analysis \cite{Ishwarappa}.
 \end{itemize}
 
 \subsubsection{Processing Data}
@@ -59,10 +73,9 @@ Velocity and volume are the two characteristics that define processing of big da
     	
     	\item Volume
     	
-    	Volume is the size of data generated by either on-line or offline transactions and stored in records, tables or as files. The data size can be defined in megabytes, gigabytes, terabytes or zettabytes.   Such voluminous, unstructuresd and complex datasets must be ingested, analysed and managed to extract valuable insight for decision making. \cite{Owais} asserted that the large volume of big data’s primary objective is to optimize the future results. The COVID-19 data is a large dataset which can be used to manage the spread of novel coronavirus disease.  Researchers can leverage the dataset to mine useful information from a collection of online articles and make sense out of such random information.
+    	Volume is the size of data generated by either on-line or offline transactions and stored in records, tables or as files. The data size can be defined in megabytes, gigabytes, terabytes or zettabytes.   Such voluminous, unstructured and complex datasets must be ingested, analysed and managed to extract valuable insight for decision making. \cite{Owais} asserted that the large volume of big data’s primary objective is to optimize the future results. The COVID-19 data is a a collection of many datasets which can be used to monitor and manage the spread of novel coronavirus disease.
     	
-    	
-    	However the challenge is on analysing and processing such large data to extract valuable information. The dataset is 2G in size and unstructured which makes it difficult to process using conventional systems \cite{Patel et al}. The dataset requires big data technologies for both storage and processing; such as google cloud, HDFS and MapReduce to ensure that it is put to valuable sure infighting the spread of COVID-19 pandemic.
+    	However the challenge is on analysing and processing such large data to extract valuable information. The dataset is 1.01G in size which makes it difficult to process using conventional systems \cite{Patel et al}. The dataset requires big data technologies for both storage and processing; such as google cloud, HDFS and MapReduce to ensure that it is put to valuable sure in fighting the spread of COVID-19 pandemic.
     	
 \end{itemize}
 
@@ -70,6 +83,8 @@ Velocity and volume are the two characteristics that define processing of big da
 In this report, we discussed the structure and content of COVID-19 Public Media Dataset. The  dataset  was discussed according to the data  collection and processing categories of the 4Vs characteristics of big data. Lastly, we noted that the dataset is a 'big data', it cannot  be managed by traditional database management systems, but modern techlonologies such as Hadoop and cloud computing applications can be used. The report also highlights the impact of COVID-19 pandemic to humanity. 
 
 \begin{thebibliography}{11}
+\bibitem{Gao}
+Gao Z, Yada S,  Wakamiya S, and Aramaki E. (2020).NAIST COVID: Multilingual COVID-19 Twitter and Weibo Dataset. arXiv:2004.08145v1 [cs.SI].
 
 \bibitem{Wang et al}
 Wang L.L, Lo K, Yang J, Reas R and Funk k. (2020). COVID-19: The COVID-19 Open Research Dataset.
