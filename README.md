@@ -28,6 +28,6 @@ https://github.com/Tafara-Freddie-Hove/MIT805-Project-github/blob/master/MIT805_
 * Data exploratation/Descriptive statistics
 *Cluster setup
 *Data processing/cleaning
-*Wrieup/presentation
+*Writeup/presentation
 
 
