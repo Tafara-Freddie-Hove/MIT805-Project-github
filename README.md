@@ -9,7 +9,7 @@ The aim of this research is to describe the COVID-19 Open Data dataset as Big da
 # Part 1
 
 Describing the Dataset ; COVID-19 Open Data
-
+https://github.com/Tafara-Freddie-Hove/MIT805-Project-github/blob/master/MIT805_Part1.pdf
 
 # Part 2
 -Hadoop-Mapreduce programs
