@@ -37,7 +37,6 @@ Mapreduce is very efficient for batch processing and it can be implemented on Ap
 In the project mapreducing and data visualisation, the COVID-19 data analytics was done by calculation average cases viz active cases of different countries. Then visualations was also conducted to assess the trends and patterns showing the spread on the pandemic. 
 
 \section{Dataset}
-\section{Dataset} 
  As discussed in PART 1 of the;  COVID-19 Open Data is a huge dataset that consists of country-level datasets of daily time-series data about COVID-19 worldwide \cite{covid-19}. The repository contains datasets of more than 50 countries around the world for the timespan February 2020 to date. The datasets reveal the impact of the virus and how different countries are responding to the pandemic.  It contains the latest available public data on COVID-19 including a daily situation update, the epidemiological curve and the global geographical distribution \cite{covid-19}. The COVID-19 Open Data is available at https://github.com/GoogleCloudPlatform/covid-19-open-data. This is dataset is made up of live data filesin the Google Cloud directory.
 
 The COVID-19 Open Data is collected from multiple sources such as Wikidata, DataCommons, WorldBank, University of Oxford and Google. The data is sourced from different countries in collaboration with the World Health Organisation 's Epidemic Intelligence on daily basis. The data reports are based on the number of COVID-19  confirmed, recovered, tested and deaths cases, from health authorities worldwide. Hence the dataset is a resource of multiple types of data outcomes, static co-variate data, dynamic co-variate data and dynamic intervention state data\cite{covid-19}.The data is stored in separate CSV and JSON files which are published in Google Cloud Storage. The collection of such huge quantities of files constitutes 1.01GB of data.  The merged dataset consists of more than 5500000 observations and 45 attributes. Hence it is a massive dataset that is stored on BiQuery Puplic datset program.
@@ -50,6 +49,21 @@ We give a brief overview of ame of the attributes to be analzed using mapreduce:
 \end{enumerate}
 
 \section{Methodology}
+Apache Spark open source platform was used for processing data on the Google Cloud Platform. Spark is fast, scalable, fault tolerant and distributed. Hence it is referred to as the general engine for processing large scale data  \cite{Chouksey and Chauhan, 2017}. Hence Spark was implemented for mapreducing. Mapreduce framework efficiently distributes the job over a number of commodity hardware and calculate the result in parallel. Spark can efficiently analyzes large data sets since it relies on in-memory storage for computing. Its main core data structure is RDD which is a dataset distributed across the RAM  of each computer in a cluster. The calculation is in Spark are executed through pipelining using transformation (map, reduceByKey) and action (take, reduce, collect) operations. To ensure effective COVID-19 data analytics using Spark Mapreduce the number of operations were implemented.
+
+\subsection{Cloud Dataproc Cluster Setup}
+Firstly, the project was created on Google Cloud platform console. The cloud storage bucket to be used in the dataproc cluster was created to store data files from BigQuery . The dataproc cluster with component gateway was officially created. The notebook was also created by making use the spark BigQuery storage connector to ensure that the data will be easily accessed fro the BiqQuery Storage public dataset. 
+
+The Dataproc hadoop cluster with Apache Spark was setup on the three nodes with one master (namenode) and two worker nodes(datanodes). The cluster was created in a difined region and zone. Each node had 2V CPU3.75GB n1-standard core, and 32GB disk size storage capacity. Then the latest version of hadoop 2.9 and spark 2.4 was used to setup the cluster. In a dataproc hadoop cluster, the jupyter notebook for python was was also accessed for the processing of big data.  In the dataproc cluster notebook the spark-bigquery-connector and BigQuery Storage API were used to  load data into the Spark Cluster. Then the Spark data from can be created by reading in data from the public BigQuery dataset. 
+
+\subsection{ Exploratory Data Analysis}
+Data exploration analysis is the very first and critical step in data analysis process. It involves the exploring of the data to identity the data patterns, trends,, variable characteristics and other interesting points. it helps to understand the key concepts and issues of the data so as to get a better informed representation of the entire dataset. Through data exploration on notebooks the dimensions of the dataset and the variable types were identified. Hence the data set was cut into a manageable size, focusing on analyzing the most relevant attributes.  
+
+\subsection{Data-preprocessing}
+
+
+\subsection{ Spark MapReduce}
+
 \section{Results}
 \section{Visualisation}
 \end{document}
