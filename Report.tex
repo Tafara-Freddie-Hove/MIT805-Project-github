@@ -18,16 +18,15 @@
 
 \begin{document}
 \maketitle
-
 \begin{abstract}
 COVID-19 data analytics is very important to every country to prevent loss of life. Many countries have been collecting COVID-19 data  on daily basis since the beginning of the pandemic. The data is being collected and archived in large volumes and different forms. Such data is rich in information which can be used to monitor and manage the spread of the pandemic. However, processing and analysing dasatets of such huge magnitude is a big challenge. In this project, we are going to work with the COVID19 open dataset, published by WHO, which consists of the data related to the cumulative number of confirmed cases, per day, in each Country. The aim of of the study is the analyze the wide spread of COVID-19. The objectives are achieved by data processing and visualization. 
 
-Big data technology Apache Spark was to handle the problem of big data since it uses distributed computing. Mapreduce is a framework often used for processing giant quality of knowledge Hadoop or Apache Spark cluster. A mapreducing model was used in this project to analyze COVID-19 data to give insight about the patterns and trends of active, confirmed, recovered and deceased cases in the world and South Africa in particular. The objective of this project is process, analyze and visualize the trends and patterns of the COVID-19 pandemic, and gain insights on how to curb the spread of the pandemic.
+Big data technology Apache Spark was to handle the problem of big data since it uses distributed computing. Mapreduce is a framework often used for processing giant quality of knowledge Hadoop or Apache Spark cluster. A Mapreducing model was used in this project to analyze COVID-19 data to give insight about the patterns and trends of active, confirmed, recovered and deceased cases in the world and South Africa in particular. The objective of this project is process, analyze and visualize the trends and patterns of the COVID-19 pandemic, and gain insights on how to curb the spread of the pandemic.
 
 \end{abstract}\hspace{10pt}
 \keywords{COVID-19, Apache Spark, Mapreduce, Visualisation}
 
-\section{Introduction}
+\section{INTRODUCTION}
 COVID-19 has directly impacted on human life in recent months globally. Coronavirus disease (COVID-19) is caused by the severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) and has had a worldwide effect. The social and economic activities of many countries negatively affected by the pandemic. Human lives were lost and livelihoods were ruined during the crises.  Due to this COVID-19 data analytics is a very significant and crucial domain for study in order to understand the devastating effects of the pandemic and make insightful decisions. Hence across the globe, there is a massive interest in COVID-19 data analysis find out where and who is mostly affected, and what measures can be implemented to 'flatten the curve' and mitigate the socio-economic imapct of the pandemic. 
 
 The aim of this study is to perform analysis on COVID-19 dataset using Apache Spark Mapreduce. The data is a huge data which consist of many rows and columns that makes it difficult to process on using a local machine. Hence using Hadoop cluster makes it easy to process the data and get instant results without any out of memory error problems. The COVID-19 Open dataset is a Google Cloud BigQuery dataset that requires massive memory and disk space to process. The data is begin created and updated daily on the google platform. Hence such massive data is difficult to work with it requires parallel processing. 
@@ -36,19 +35,51 @@ Mapreduce is very efficient for batch processing and it can be implemented on Ap
 
 In the project mapreducing and data visualisation, the COVID-19 data analytics was done by calculation average cases viz active cases of different countries. Then visualations was also conducted to assess the trends and patterns showing the spread on the pandemic. 
 
-\section{Dataset}
- As discussed in PART 1 of the;  COVID-19 Open Data is a huge dataset that consists of country-level datasets of daily time-series data about COVID-19 worldwide \cite{covid-19}.The repository contains datasets of more than 50 countries around the world for the timespan February 2020 to date. The data is disaggregated  by country or by regions. The datasets reveal the impact of the virus and how different countries are responding to the pandemic.  It contains the latest available public data on COVID-19 including a daily situation update, the epidemiological curve and the global geographical distribution \cite{covid-19}. The COVID-19 Open Data is available at https://github.com/GoogleCloudPlatform/covid-19-open-data. This is dataset is made up of live data files in the Google Cloud directory.
+\section{DATASET}
+ In this project, we are going to work with the COVID19 open dataset, published by WHO, which consists of the data related to the cumulative number of confirmed cases, per day, in each Country. The aim of this section is to give a comprehensive overview of the dataset. The main goal is to explain the dataset, highlighting some key interesting characterstics and discuss some attributes that possess some interesting aspects  within the dataset.
+
+\subsection{Dataset Overview}
+
+ As discussed in PART 1 of the this project;  COVID-19 Open Data is a huge dataset that consists of country-level datasets of daily time-series data about COVID-19 worldwide \cite{covid-19}.The repository contains datasets of more than 50 countries around the world for the timespan February 2020 to date. The data is disaggregated  by country or by regions. The datasets reveal the impact of the virus and how different countries are responding to the pandemic.  It contains the latest available public data on COVID-19 including a daily situation update, the epidemiological curve and the global geographical distribution \cite{covid-19}. The COVID-19 Open Data is available at https://github.com/GoogleCloudPlatform/covid-19-open-data. This is dataset is made up of live data files in the Google Cloud directory.
 
 The COVID-19 Open Data is collected from multiple sources such as Wikidata, DataCommons, WorldBank, University of Oxford and Google. The data is sourced from different countries in collaboration with the World Health Organisation 's Epidemic Intelligence on daily basis. The data reports are based on the number of COVID-19  confirmed, recovered, tested and deaths cases, from health authorities worldwide. Hence the dataset is a resource of multiple types of data outcomes, static co-variate data, dynamic co-variate data and dynamic intervention state data\cite{covid-19}.The data is stored in separate CSV and JSON files which are published in Google Cloud Storage. The collection of such huge quantities of files constitutes 1.01GB of data.  The merged dataset consists of more than 5500000 observations and 45 attributes. Hence it is a massive dataset that is stored on BiQuery Puplic datset program.
+
+\subsection{Features Selection}
+Feature selection is a process where a subset of attributes or variables of a dataset are selected for further processing to address the task at hand. The attributes which are  not to have interesting information are removed. New  attributes can also be created and added to the data frame. Hence the  attributes  of interest were selected from the dataset  to do some data analysis using Map-reduce.  Such data analysis using the selected attributes will help to calculate and determine needed measures to curb the spread of the pandemic and its devastating consequences. They can also reveal the relationship between the spread of the virus in a country and how people's lives and livelihoods are being affected in a country.
+
+Below is a list of selected variables and reason their inclusion in the data analysis:
+
+\begin{itemize}
+    \item date: This is the day a COVID-19 case was recorded or confirmed. It helps to monitor the trends (increases/decrease in number of cases) of the pandemic.
+    For each date, the cumulative number of confirmed cases and deaths as reported that day in that county or state are shown. All cases and deaths are counted on the date they are first announced.
+    
+    \item country name: The column reveals names of countries and which countries are making progress against the pandemic. It shows what measures implemented by a country in response to the pandemic.
+    
+    \item region:  The column illustrates states/provinces of different countries and how each geographic area responds to the pandemic.
+    
+    \item cumulative confirmed: This column shows the total number of recorded positive cases from the day the first case was recorded. 
+      
+    \item cumulative confirmed deceased /new:  Is the total deaths from conoravirus recorded. Help to check if the number of deaths are increasing or not , compared to other countries. This shows if the country is able to contain the pandemic or not? Is the death toll continues to rise quickly daily or weekly?
+    
+    \item cumulative recovered: The number of number of people infected and recovered from coronavirus
+      
+     \item cumulative test:  It shows how much testing for coronavirus do countries conduct, when it started how does it compared with other countries? if the number of confirmed cases is lower than the actual cases , then it means that there is limited testing in that country.
+      
+    \item new confirmed cases:  It reveals how the country performs test relative to the size of the outbreak
+    
+\end{itemize}
+
+
+\subsection{Investigative Questions}
 
 
 \section{Methodology}
 Apache Spark open source platform was used for processing data on the Google Cloud Platform. Spark is fast, scalable, fault tolerant and distributed. Hence it is referred to as the general engine for processing large scale data  \cite{Chouksey and Chauhan, 2017}. Hence Spark was implemented for mapreducing. Mapreduce framework efficiently distributes the job over a number of commodity hardware and calculate the result in parallel. Spark can efficiently analyzes large data sets since it relies on in-memory storage for computing. Its main core data structure is RDD which is a dataset distributed across the RAM  of each computer in a cluster. The calculation is in Spark are executed through pipelining using transformation (map, reduceByKey) and action (take, reduce, collect) operations. To ensure effective COVID-19 data analytics using Spark Mapreduce the number of operations were implemented.
 
-\subsection{Cloud Dataproc Cluster Setup}
-Firstly, the project was created on Google Cloud platform console. The cloud storage bucket to be used in the dataproc cluster was created to store data files from BigQuery . The dataproc cluster with component gateway was officially created. The notebook was also created by making use the spark BigQuery storage connector to ensure that the data will be easily accessed fro the BiqQuery Storage public dataset. 
+\subsection{ Google Cloud Dataproc Cluster Setup}
+Firstly, the project was created on Google Cloud platform console. The cloud storage bucket to be used on the Dataproc cluster was created to store data files from BigQuery . The we installed and ran a Jupypter notebook on a Dataproc cluster. The Python 3 kernel was used to configure the SparkSession in the notebook. 
 
-The Dataproc hadoop cluster with Apache Spark was setup on the three nodes with one master (namenode) and two worker nodes(datanodes). The cluster was created in a difined region and zone. Each node had 2V CPU3.75GB n1-standard core, and 32GB disk size storage capacity. Then the latest version of hadoop 2.9 and spark 2.4 was used to setup the cluster. In a dataproc hadoop cluster, the jupyter notebook for python was was also accessed for the processing of big data.  In the dataproc cluster notebook the spark-bigquery-connector and BigQuery Storage API were used to  load data into the Spark Cluster. Then the Spark data from can be created by reading in data from the public BigQuery dataset. 
+The Dataproc hadoop cluster with Apache Spark were setup on the three nodes with one master (namenode) and two worker nodes(datanodes). The cluster was created in a defined region and zone. Each node had 2V CPU3.75GB n1-standard core, and 32GB disk size storage capacity. Then the latest version of hadoop 2.9 and spark 2.4 was used to setup the cluster. In a dataproc hadoop cluster, the jupyter notebook for python was was also accessed for the processing of big data.  In the dataproc cluster notebook the spark-bigquery-connector and BigQuery Storage API were used to  load data into the Spark Cluster. Then the Spark data from can be created by reading in data from the public BigQuery dataset. 
 
 \subsection{ Exploratory Data Analysis}
 Data exploration analysis is the very first and critical step in data analysis process. It involves the exploring of the data to identity the data patterns, trends,, variable characteristics and other interesting points. it helps to understand the key concepts and issues of the data so as to get a better informed representation of the entire dataset. Through data exploration on notebooks the dimensions of the dataset and the variable types were identified. Hence the data set was cut into a manageable size, focusing on analyzing the most relevant attributes.  
@@ -70,42 +101,6 @@ In addition, SQL queries on DataFrames were also executed on Spark. The DataFram
 
 \end{itemize}
 
-\subsubsection{Attributes}
- In this project, we are going to work with the COVID19 open dataset, published by WHO, which consists of the data related to the cumulative number of confirmed cases, per day, in each Country. We selected some attributes from the dataset  to do some data analysis using Map-reduce.  Such data analysis using the selected attrbutes will help to calculate and determine needed measures to curb the spread of the pandemic and its devastating consequences.
- 
- We are going to merge these two datasets to see if there is any relationship between the spread of the virus in a country and how happy people are, living in that country.
-
-
-Attributes used include
-\begin{itemize}
-    \item date
-    
-    The date is the day a COVID-19 case was recorded or confirmed. It helps to monitor the trends (increases/decrease in number of cases) of the pandemic.
-    For each date, the cumulative number of confirmed cases and deaths as reported that day in that county or state are shown. All cases and deaths are counted on the date they are first announced.
-    
-    \item country name
-    
-    The column reveals names of countries and which countries are making progress against the pandemic. it shows what measures implemented by a country in response to the pandemic.
-    
-    \item region 
-    The column illustrates states/provinces of different countries and how each geographic area responds to the pandemic.
-    
-    \item cumulative confirmed
-      This column shows the total number of recorded positive cases from the day the first case was recorded. 
-      
-    \item cumulative confirmed deceased /new 
-    Is the total deaths from conoravirus recorded. Help to check if the number of deaths are increasing or not , compared to other countries. This shows if the country is able to contain the pandemic or not? is the death toll continues to rise quickly daily or weekly?
-    
-    \item cumulative recovered
-    The number of number of people infected and recovered from coronavirus
-      
-      \item cumulative testing
-      It shows how much testing for coronavirus do countries conduct, when it started how does it compared with other countries? if the number of confirmed cases is lower than the actual cases , then it means that there is limited testing in that country.
-      
-      \item new confirmed cases
-      It reveals how the country performs test relative to the size of the outbreak
-    
-\end{itemize}
 
 
 
