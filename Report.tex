@@ -81,9 +81,9 @@ Below is a list of selected variables and reason their inclusion in the data ana
     \item  Which countries have the highest active cases ?
     \item How does the number of confirmed cases correspond to hospitalizations and deaths?
     \item how does economic actives, people mobility and recreation where affected by the pandemic?
-    \item Which provinces in South Africa has the highest cases in the past 30 days?
-    \item Is the spread of COVID-19 associated with weather condition (temperature)
-    \item has the number of infections changed over time in most countries
+    \item Which provinces in South Africa has the  confirmed cases highest cases ?
+    \item Is the spread of COVID-19 associated with weather condition (temperature)?
+    \item has the number of infections changed over time in most countries?
 \end{enumerate}
 
 in order to address the questions above  some  data manipulation, processing and analysis were data on the define environment as discussed in the next section.
@@ -108,10 +108,22 @@ Spark is an efficient and fast engine used to process and analyze large-scale da
 
 \section{ANALYSIS AND RESULTS}
 
-This section presents the results of analyzed attributes extracted from the dataset. The purpose is to reveal the project findings  in relation to the insights that were mined from the data. As discussed in the last section, Spark SQL was used to query the dataset to answer the  investigative questions highlighted in the previous section. The screenshots of the results will be ued to illustrate the findings and solutions to the  questions.  
+This section presents the results of analyzed attributes extracted from the dataset. The purpose is to reveal the project findings  in relation to the insights that were mined from the data. As discussed in the last section, Spark SQL was used to query the dataset to answer the  investigative questions highlighted in the previous section. The graphs and maps will clearly illustrate the findings and solutions to the  questions in the next section.  
 
 \begin{enumerate}
-    \item Countries with highest cumulative cases(confirmed, recovered and deceased)
+    \item Cumulative confirmed cases vs Cumulative confirmed deaths 
+    The result of the project shows that  from top 20 countries with high cumulative conformed cases, they have also very high deaths. For instance United States of America has a total of 9126351 confirmed cases and 230556, followed by india with 8184082 confirmed cases and 122111 deaths. In Africa, the most affected country is South Africa with 725452 cumulative confirmed cases and 19276 death cases. Seemingly this reveals that as more people get infected with COVID-19 virus a sizeable numbered of people is expected to die. In addition the findings also showed that more people were hospitalized.On the other hand the number of confirmed cases depend on the number of test done in the country. The countries all the countries have very high number of people who tested for COVID-19.  Hence there is a high correlation between cumulative confirmed and  cumulative deceased cases. 
+    
+    \item Active cases
+    The active case finding is another key for the control and prevention communicable diseases. The active cases are were calculated by subtracting the total deceased and total recovered from the total confirmed cases. The active cases are fluctuating day by day and country by country.  But  there statistics revealed that country with high active cases have also high deaths and hospitalisations like USA, UK, Spain and South Africa.
+    
+    \item Cases in South Africa
+    South Africa is the country in Africa with the highest number of  COVID-19 infections. South Africa COVID-19 data was extracted from the main dataset. The statistics revealed that more cases were concentrated in Gauteng with 228756 confirmed cases and Western Cape recorded 117 326.  The percentage ratio of the cases are as follows ----. In addtion high  number of hospitalisations and death cases are also confirmed in these provinces. 
+    
+    
+    \item Checking trends on the number of new infections per pay in SAin the past 100 days
+    The aim is to analyze the patterns in the last 100 days  to check wther the infections are increasing or decresing in South Africa.
+    
     
 \end{enumerate}
 
