@@ -1,7 +1,9 @@
 \documentclass[12pt,letterpaper, twoside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{graphicx}
 \usepackage{dirtytalk}
+\usepackage[export]{adjustbox}
 
 \title{COVID-19 Open Data : Map-Reduction and Visualisation}
 \author{Tafara Freddie Hove \\
@@ -19,30 +21,32 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-COVID-19 data analytics is very important to every country to prevent loss of life. Many countries have been collecting COVID-19 data  on daily basis since the beginning of the pandemic. The data is being collected and archived in large volumes and different forms. Such data is rich in information which can be used to monitor and manage the spread of the pandemic. However, processing and analysing dasatets of such huge magnitude is a big challenge. In this project, we are going to work with the COVID19 open dataset, published by WHO, which consists of the data related to the cumulative number of confirmed cases, per day, in each Country. The aim of of the study is the analyze the wide spread of COVID-19. The objectives are achieved by data processing and visualization. 
 
-Big data technology Apache Spark was to handle the problem of big data since it uses distributed computing. Mapreduce is a framework often used for processing giant quality of knowledge Hadoop or Apache Spark cluster. A Mapreducing model was used in this project to analyze COVID-19 data to give insight about the patterns and trends of active, confirmed, recovered and deceased cases in the world and South Africa in particular. The objective of this project is process, analyze and visualize the trends and patterns of the COVID-19 pandemic, and gain insights on how to curb the spread of the pandemic.
+
+Big data  causes many challenges to conventional data analysis and mining  techniques due to its characteristics like volume, velocity and variety. Hence, there is need for more advanced technologies that can process and analyse Big data  effectively and efficiently. This report discusses the COVID-19 Data, which Big Data and how  to use Apache Spark on such datasets. Applying analytical task to big data can help extract valuable information that can be used to curb the spread of COVID-19  pandemic and safe more lives. Data analysis and visualisation will be done on the selected attributes using Spark Mapreduce tools
+
+
 
 \end{abstract}\hspace{10pt}
 \keywords{COVID-19, Apache Spark, Mapreduce, Visualisation}
 
 \section{INTRODUCTION}
-COVID-19 has directly impacted on human life in recent months globally. Coronavirus disease (COVID-19) is caused by the severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) and has had a worldwide effect. The social and economic activities of many countries negatively affected by the pandemic. Human lives were lost and livelihoods were ruined during the crises.  Due to this COVID-19 data analytics is a very significant and crucial domain for study in order to understand the devastating effects of the pandemic and make insightful decisions. Hence across the globe, there is a massive interest in COVID-19 data analysis find out where and who is mostly affected, and what measures can be implemented to 'flatten the curve' and mitigate the socio-economic imapct of the pandemic. 
+Apache Spark is a distributed computing  technology that can processes large datasets. A Mapreducing model is required to analyze COVID-19 data to give insight about the patterns and trends of active, confirmed, recovered and deceased cases in the world and South Africa in particular. Mapreduce is very efficient for batch processing and it can be implemented on Apache Spark which is very efficient for iterative in-memory computing and this combination simplifies supports distributed and parallel applications that handle giant quantity information. Mapreduce is a software framework  that can process massive datasets in a distributed environment over several devices \cite{}. 
 
-The aim of this study is to perform analysis on COVID-19 dataset using Apache Spark Mapreduce. The data is a huge data which consist of many rows and columns that makes it difficult to process on using a local machine. Hence using Hadoop cluster makes it easy to process the data and get instant results without any out of memory error problems. The COVID-19 Open dataset is a Google Cloud BigQuery dataset that requires massive memory and disk space to process. The data is begin created and updated daily on the google platform. Hence such massive data is difficult to work with it requires parallel processing. 
-
-Mapreduce is very efficient for batch processing and it can be implemented on Apache Spark which is very efficient for iterative in-memory computing and this combination simplifies supports distributed and parallel applications that handle giant quantity information. Mapreduce is a software framework  that can process massive datasets in a distributed environment over several devices \cite{}. The main idea behind Mapreduce mapping the data in a collection of (key, vaue) pairs and reducing all the pairs using the same key. Map fuction can do grouping, filtering and sorting of data. on the other hand, reduce function aggregates and summarizes the data results generated by the map function. 
-
-In the project mapreducing and data visualisation, the COVID-19 data analytics was done by calculation average cases viz active cases of different countries. Then visualations was also conducted to assess the trends and patterns showing the spread on the pandemic. 
+ Mapreduce involves the mapping the data in a collection of (key, value) pairs and reducing all the pairs using the same key. Map function can do grouping, filtering and sorting of data. On the other hand, reduce function aggregates and summarizes the data results generated by the map function. In the project we analyze and visualize the COViD-19 Open dataset, an open data source  which can help about a better understanding of health status of the world at large. Processing and analysing Big Data on a local machine using traditional techniques such as excel posses a big challenge.
+ 
+ In order to  have a perspective of the world health issues related to COVID-19 there are question that are going to be dicussed and answered during the data analysis and visualisation.
+ 
+ This paper is giving a comprehensive examination of of the CIVID-19 Open dataset using Apache Spark processing tools and disscuses the processeses, approaches,results and visualize of the executed operations. The paper's layout as follows ; Section 2 --------
 
 \section{DATASET}
- In this project, we are going to work with the COVID19 open dataset, published by WHO, which consists of the data related to the cumulative number of confirmed cases, per day, in each Country. The aim of this section is to give a comprehensive overview of the dataset. The main goal is to explain the dataset, highlighting some key interesting characterstics and discuss some attributes that possess some interesting aspects  within the dataset.
+ In this  section, the detailed overview of the COVID-19 open dataset is presented. The dataset reveals main aspects of COVID-19. The section explains the dataset, highlighting some key interesting characterstics and discuss some attributes that possess some interesting aspects  within the dataset.
 
 \subsection{Dataset Overview}
 
  As discussed in PART 1 of the this project;  COVID-19 Open Data is a huge dataset that consists of country-level datasets of daily time-series data about COVID-19 worldwide \cite{covid-19}.The repository contains datasets of more than 50 countries around the world for the timespan February 2020 to date. The data is disaggregated  by country or by regions. The datasets reveal the impact of the virus and how different countries are responding to the pandemic.  It contains the latest available public data on COVID-19 including a daily situation update, the epidemiological curve and the global geographical distribution \cite{covid-19}. The COVID-19 Open Data is available at https://github.com/GoogleCloudPlatform/covid-19-open-data. This is dataset is made up of live data files in the Google Cloud directory.
 
-The COVID-19 Open Data is collected from multiple sources such as Wikidata, DataCommons, WorldBank, University of Oxford and Google. The data is sourced from different countries in collaboration with the World Health Organisation 's Epidemic Intelligence on daily basis. The data reports are based on the number of COVID-19  confirmed, recovered, tested and deaths cases, from health authorities worldwide. Hence the dataset is a resource of multiple types of data outcomes, static co-variate data, dynamic co-variate data and dynamic intervention state data\cite{covid-19}.The data is stored in separate CSV and JSON files which are published in Google Cloud Storage. The collection of such huge quantities of files constitutes 1.01GB of data.  The merged dataset consists of more than 5500000 observations and 45 attributes. Hence it is a massive dataset that is stored on BiQuery Puplic datset program.
+The COVID-19 Open Data is collected from multiple sources such as Wikidata, DataCommons, WorldBank, University of Oxford and Google. The data is sourced from different countries through the initiative of the World Health Organisation's Epidemic Intelligence on daily basis. The data reports are based on the number of COVID-19  confirmed, recovered, tested and deaths cases, from health authorities worldwide etc. Hence the dataset is a resource of multiple types of data outcomes, static co-variate data, dynamic co-variate data and dynamic intervention state data\cite{covid-19}.The data is stored in separate CSV and JSON files which are published in Google Cloud Storage. The collection of such huge quantities of files constitutes 1.01GB of data.  The merged datasets' size has  more than 6112480 observations and 45 attributes.  The attributes types are strings and numeric values. The dataset that is stored on BiQuery Puplic dataset program.
 
 \subsection{Features Selection}
 Feature selection is a process where a subset of attributes or variables of a dataset are selected for further processing to address the task at hand. The attributes which are  not to have interesting information are removed. New  attributes can also be created and added to the data frame. Hence the  attributes  of interest were selected from the dataset  to do some data analysis using Map-reduce.  Such data analysis using the selected attributes will help to calculate and determine needed measures to curb the spread of the pandemic and its devastating consequences. They can also reveal the relationship between the spread of the virus in a country and how people's lives and livelihoods are being affected in a country.
@@ -72,8 +76,19 @@ Below is a list of selected variables and reason their inclusion in the data ana
 
 \subsection{Investigative Questions}
 
+\begin{enumerate}
+    \item Which  ten countries have the highest number of commutative confirmed, cumulative deceased and recoveries cases?
+    \item  Which countries have the highest active cases ?
+    \item How does the number of confirmed cases correspond to hospitalizations and deaths?
+    \item how does economic actives, people mobility and recreation where affected by the pandemic?
+    \item Which provinces in South Africa has the highest cases in the past 30 days?
+    \item Is the spread of COVID-19 associated with weather condition (temperature)
+    \item has the number of infections changed over time in most countries
+\end{enumerate}
 
-\section{Methodology}
+in order to address the questions above  some  data manipulation, processing and analysis were data on the define environment as discussed in the next section.
+
+\section{METHODOLOGY}
 Apache Spark open source platform was used for processing data on the Google Cloud Platform. Spark is fast, scalable, fault tolerant and distributed. Hence it is referred to as the general engine for processing large scale data  \cite{Chouksey and Chauhan, 2017}. Hence Spark was implemented for mapreducing. Mapreduce framework efficiently distributes the job over a number of commodity hardware and calculate the result in parallel. Spark can efficiently analyzes large data sets since it relies on in-memory storage for computing. Its main core data structure is RDD which is a dataset distributed across the RAM  of each computer in a cluster. The calculation is in Spark are executed through pipelining using transformation (map, reduceByKey) and action (take, reduce, collect) operations. To ensure effective COVID-19 data analytics using Spark Mapreduce the number of operations were implemented.
 
 \subsection{ Google Cloud Dataproc Cluster Setup}
@@ -82,28 +97,45 @@ Firstly, the project was created on Google Cloud platform console. The cloud sto
 The Dataproc hadoop cluster with Apache Spark were setup on the three nodes with one master (namenode) and two worker nodes(datanodes). The cluster was created in a defined region and zone. Each node had 2V CPU3.75GB n1-standard core, and 32GB disk size storage capacity. Then the latest version of hadoop 2.9 and spark 2.4 was used to setup the cluster. In a dataproc hadoop cluster, the jupyter notebook for python was was also accessed for the processing of big data.  In the dataproc cluster notebook the spark-bigquery-connector and BigQuery Storage API were used to  load data into the Spark Cluster. Then the Spark data from can be created by reading in data from the public BigQuery dataset. 
 
 \subsection{ Exploratory Data Analysis}
-Data exploration analysis is the very first and critical step in data analysis process. It involves the exploring of the data to identity the data patterns, trends,, variable characteristics and other interesting points. it helps to understand the key concepts and issues of the data so as to get a better informed representation of the entire dataset. Through data exploration on notebooks the dimensions of the dataset and the variable types were identified. Hence the data set was cut into a manageable size, focusing on analyzing the most relevant attributes.  
+Data exploration analysis is the very first and critical step in data analysis process. It involves the exploring of the data to identity the data patterns, trends, variable characteristics and other interesting points. it helps to understand the key concepts and issues of the data so as to get a better informed representation of the entire dataset. Through data exploration on notebooks the dimensions of the dataset and the variable types were identified. Hence the data set was cut into a manageable size, focusing on analyzing the most relevant attribute discussed in section II. 
 
 \subsection{Data preparation}
-Data preparation involves cleaning, transforming and rearranging of data. The EDA revealed that the dataset consists of 5500000 rows and 45 columns and some of the data observations are incomplete. The dataset had missing data and duplicate data. The dublicate columns were removed, and the filling in of missing data was also done. The selection of the describing important  attributes was done. Hence the data was rearranged in various ways to ensure  manipulation of datasets. 
+ This a data extraction process which involves data preparation activities such cleaning, transforming and rearranging of data. The dataset had missing data and duplicate data. The duplicate rows were removed, and missing values were replaced. Some features were selected and other were drop for data analysis. Hence the data was rearranged in various ways to ensure  manipulation of datasets. 
 
 
-\subsection{Spark MapReduce}
-Spark is an efficient and fast engine used to process and analyze large-scale data. Spark was used to implement Mapreduce data flow pattern on the jupyter notebook. The Spark framework is involves a chain of RDD transformations and actions. 
-\subsubsection{DataFrame Operation in PySpark}
+\subsection{Spark SQL}
+Spark is an efficient and fast engine used to process and analyze large-scale data. It is an in-memory computation hence it was chosen over Hadoop Map-Reduce which read  and write to a disk which makes slow. Spark SQl and Spark RDDs are the key technologies for data analysis in Spark. Moreover, in this project Spark SQL was used for querying  and analyzing the dataset. SQL can easily  query DataFrames and familiar queries can also be executed on top of park for data analysis.
 
-The PySpark module was imported, installed and configured in order to perform programming using Spark in Python. The computations of the pre-processed  COVID-19 dataset were loaded and  distributed over different work-nodes on the cluster by the spark's RDD. RDD is a dataset which is distributed across the RAM of the nodes in a cluster  which can perform parallel processing. Then transformation and action operations were applied on RDD to perform data analytics. 
-\begin{itemize}
-    \item Transformation method is applied on RDD to form new RDDs (datasets). Some transformation function examples include map(),flatMap(),filter(), reduceByKey(). 
-    \item Action operations are applied on RDD to perform computations and send forward the results to the driver. That is it reduces or aggregates the output of a map by ussing some methods such as take(), reduce(), collect(), count().
+\section{ANALYSIS AND RESULTS}
+
+This section presents the results of analyzed attributes extracted from the dataset. The purpose is to reveal the project findings  in relation to the insights that were mined from the data. As discussed in the last section, Spark SQL was used to query the dataset to answer the  investigative questions highlighted in the previous section. The screenshots of the results will be ued to illustrate the findings and solutions to the  questions.  
+
+\begin{enumerate}
+    \item Countries with highest cumulative cases(confirmed, recovered and deceased)
     
-In addition, SQL queries on DataFrames were also executed on Spark. The DataFrame were initially converted to tables in oreder to use the SQL queries to perform MapReducing. 
+\end{enumerate}
 
-\end{itemize}
+\section{VISUALISATION}
 
+\begin{figure}[h]
+\includegraphics[width=0.9\linewidth, height=5cm]{linegraph.png}
+\caption{Caption}
+\label{fig:figure2}
+\end{figure}
 
-
-
-\section{Results}
-\section{Visualisation}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
