@@ -92,9 +92,9 @@ in order to address the questions above  some  data manipulation, processing and
 Apache Spark open source platform was used for processing data on the Google Cloud Platform. Spark is fast, scalable, fault tolerant and distributed. Hence it is referred to as the general engine for processing large scale data  \cite{Chouksey and Chauhan, 2017}. Hence Spark was implemented for mapreducing. Mapreduce framework efficiently distributes the job over a number of commodity hardware and calculate the result in parallel. Spark can efficiently analyzes large data sets since it relies on in-memory storage for computing. Its main core data structure is RDD which is a dataset distributed across the RAM  of each computer in a cluster. The calculation is in Spark are executed through pipelining using transformation (map, reduceByKey) and action (take, reduce, collect) operations. To ensure effective COVID-19 data analytics using Spark Mapreduce the number of operations were implemented.
 
 \subsection{ Google Cloud Dataproc Cluster Setup}
-Firstly, the project was created on Google Cloud platform console. The cloud storage bucket to be used on the Dataproc cluster was created to store data files from BigQuery . The we installed and ran a Jupypter notebook on a Dataproc cluster. The Python 3 kernel was used to configure the SparkSession in the notebook. 
+Firstly, the project was created on Google Cloud platform console. The cloud storage bucket to be used on the Dataproc cluster was created to store data files from BigQuery . The we installed and ran a Jupypter notebook on a Dataproc cluster. The Python 3 kernel was used to configure the SparkSession in the notebook.  Thus the gloogle cloud platform was used for my Spark needs
 
-The Dataproc hadoop cluster with Apache Spark were setup on the three nodes with one master (namenode) and two worker nodes(datanodes). The cluster was created in a defined region and zone. Each node had 2V CPU3.75GB n1-standard core, and 32GB disk size storage capacity. Then the latest version of hadoop 2.9 and spark 2.4 was used to setup the cluster. In a dataproc hadoop cluster, the jupyter notebook for python was was also accessed for the processing of big data.  In the dataproc cluster notebook the spark-bigquery-connector and BigQuery Storage API were used to  load data into the Spark Cluster. Then the Spark data from can be created by reading in data from the public BigQuery dataset. 
+The Dataproc hadoop cluster with Apache Spark wwas setup on the three nodes with one master (namenode) and two worker nodes(datanodes). The cluster was created in a defined region and zone. Each node had 2V CPU3.75GB n1-standard core, and 32GB disk size storage capacity. Then the latest version of hadoop 2.9 and spark 2.4 was used to setup the cluster. In a dataproc hadoop cluster, the jupyter notebook for python was was also accessed for the processing of big data.  In the dataproc cluster notebook the spark-bigquery-connector and BigQuery Storage API were used to  load data into the Spark Cluster. Then the Spark data from can be created by reading in data from the public BigQuery dataset. 
 
 \subsection{ Exploratory Data Analysis}
 Data exploration analysis is the very first and critical step in data analysis process. It involves the exploring of the data to identity the data patterns, trends, variable characteristics and other interesting points. it helps to understand the key concepts and issues of the data so as to get a better informed representation of the entire dataset. Through data exploration on notebooks the dimensions of the dataset and the variable types were identified. Hence the data set was cut into a manageable size, focusing on analyzing the most relevant attribute discussed in section II. 
@@ -117,17 +117,31 @@ This section presents the results of analyzed attributes extracted from the data
     \item Active cases
     The active case finding is another key for the control and prevention communicable diseases. The active cases are were calculated by subtracting the total deceased and total recovered from the total confirmed cases. The active cases are fluctuating day by day and country by country.  But  there statistics revealed that country with high active cases have also high deaths and hospitalisations like USA, UK, Spain and South Africa.
     
+    The prediction of active cases is a very crucial measure used to evaluate the current COVID-19 situation. Every active case can lead to the infection of more people hence contributing to danger in the future. When the active cases decrease it implies a less danger in the  exponential spread of COVID-19
+    
     \item Cases in South Africa
     South Africa is the country in Africa with the highest number of  COVID-19 infections. South Africa COVID-19 data was extracted from the main dataset. The statistics revealed that more cases were concentrated in Gauteng with 228756 confirmed cases and Western Cape recorded 117 326.  The percentage ratio of the cases are as follows ----. In addtion high  number of hospitalisations and death cases are also confirmed in these provinces. 
     
     
-    \item Checking trends on the number of new infections per pay in SAin the past 100 days
-    The aim is to analyze the patterns in the last 100 days  to check wther the infections are increasing or decresing in South Africa.
-    
+    \item Checking trends on the number of new infections per pay in SA in the past 100 days
+    The aim is to analyze the patterns in the last 100 days  to check whether the infections are increasing or decresing in South Africa.
+     
+     \item Temperature vs Confirmed cases
+     The aim was to corelate tempretaute and transmission. 
     
 \end{enumerate}
 
 \section{VISUALISATION}
+Visualisation is a significant aspect of big data analysis process. Informative visualisation identifies patterns and establishes trends of big data. Big data is messy, it is difficult to analyze and understand. There there is need for data visualization techniques for effective communication of data. The main objective of using data visualisation in this project is to simplify quantitative information of COVID-19 Open data through visuals such as graphs and maps. The relationships, characteristics and patterns underlying data will be revealed through maps and plotting. Hence the  hidden patterns. The novel big data visualisation techniques extract hidden patterns, trends and ensure clear cut understanding of the dataset. The data quries built in SQL language were used to retrieve insightful information from the data
+
+Since this section is a follow-up of the prevision section on data analysis and results some of the processed outcomes will be visualized in this sections. The packages that were used for data visualization include searbon, matplotlib, and pandas to mention but a few. The forms of analysis presentation are visual graphs, charts and maps. 
+
+\subsection{Line graphs}
+\subsection{Bar graphs}
+\subsection{Pie charts}
+\subsection{Scatter plots}
+\subsection{Maps}
+
 
 \begin{figure}[h]
 \includegraphics[width=0.9\linewidth, height=5cm]{linegraph.png}
