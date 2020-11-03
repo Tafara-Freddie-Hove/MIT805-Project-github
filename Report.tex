@@ -1,9 +1,13 @@
-\documentclass[12pt,letterpaper, twoside]{article}
+\documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{dirtytalk}
 \usepackage[export]{adjustbox}
+\usepackage{wrapfig,blindtext}
+\usepackage{float}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
 
 \title{COVID-19 Open Data : Map-Reduction and Visualisation}
 \author{Tafara Freddie Hove \\
@@ -134,20 +138,53 @@ This section presents the results of analyzed attributes extracted from the data
 \section{VISUALISATION}
 Visualisation is a significant aspect of big data analysis process. Informative visualisation identifies patterns and establishes trends of big data. Big data is messy, it is difficult to analyze and understand. There there is need for data visualization techniques for effective communication of data. The main objective of using data visualisation in this project is to simplify quantitative information of COVID-19 Open data through visuals such as graphs and maps. The relationships, characteristics and patterns underlying data will be revealed through maps and plotting. Hence the  hidden patterns. The novel big data visualisation techniques extract hidden patterns, trends and ensure clear cut understanding of the dataset. The data quries built in SQL language were used to retrieve insightful information from the data
 
-Since this section is a follow-up of the prevision section on data analysis and results some of the processed outcomes will be visualized in this sections. The packages that were used for data visualization include searbon, matplotlib, and pandas to mention but a few. The forms of analysis presentation are visual graphs, charts and maps. 
+Since this section is a follow-up of the prevision section on data analysis and results some of the processed outcomes will be visualized in this sections. The packages that were used for data visualization include searbon, matplotlib, and pandas to mention but a few. The forms of analysis presentation are visual graphs, charts and maps.
 
-\subsection{Line graphs}
-\subsection{Bar graphs}
-\subsection{Pie charts}
-\subsection{Scatter plots}
-\subsection{Maps}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth, height=7cm]{activecases.png}
+\caption{Line graph showing the trends of active cases in the world.}
+\label{fig:figure1}
+\end{figure}
+
+What we observed  from Figure 1 is that the active cases is increasing over time since the begging of the pandemic. For entire of January to March the active number of active cases was constant except a for a sharp increase and decrease in mid February. A continuous rapid increase in the cases started in mid March  until end of June. The exponential increase continue but with some deep drops in between until October.  The drops could be a result of lockdown inposted by many countries and other regulations such as the use of face masks and sensations. The  rapid  fluctuation  active cases could be also be due to relasisation of regulations by many countries and people ignorance to abide by COVID-19 regulations. The rapid vertical decline of the line graph at the end of time period is a result of incomplete data. The data of the present day is not yet updated hence the graph drops to zero. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth, height=7cm]{line2.png}
+\caption{line illustrating the relationship among the cumulative confirmed deceased and recovered.}
+\label{fig:figure2}
+\end{figure}
+
+
 
 
 \begin{figure}[h]
-\includegraphics[width=0.9\linewidth, height=5cm]{linegraph.png}
+\includegraphics[width=0.7\linewidth, height=7cm]{bar1.png}
 \caption{Caption}
-\label{fig:figure2}
+\label{fig:figure3}
 \end{figure}
+
+
+\begin{figure}[h]
+\includegraphics[width=0.7\linewidth, height=7cm]{bar2.png}
+\caption{Caption}
+\label{fig:figure4}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth, height=9cm]{pie1.png}
+\caption{Caption}
+\label{fig:figure5}
+\end{figure}
+
+
+The effect of temperature on Virus
+We investigate whether cumulative  cases of coronavirus in USA to check whether the rate of transmission of the virus declines at higher temperature. The average temperatures in march to April varied from 30 to 70 degrees Fahrenheit. 
+However the confirmed cases and deaths were also increasing exponentially. 
+There is no evidence  that a higher average temperature reduces the incidence of cases of the virus the country. WE can conclude that with this trends there is no co relation between seasonal increases in temperature and coronavirus 
 
 \end{document}
 
