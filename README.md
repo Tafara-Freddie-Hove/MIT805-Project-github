@@ -18,8 +18,8 @@ https://github.com/Tafara-Freddie-Hove/MIT805-Project-github/blob/master/MIT805_
 *Mapreduce is a key programing model for data  processing  in Hadoop ecosystem
 
 
-https://storage.cloud.google.com/rs-jub-spark-bucket/notebooks/jupyter/Spark-notebok/My%20Spark%20Jupyter%20file.ipynb
-
+# The MapReducing and data visualisation code can be acceed here:
+file:///C:/Users/tfhove/AppData/Local/Temp/My%20Spark%20Jupyter%20file.slides.html
 
 # Technologies
 
@@ -44,5 +44,5 @@ https://storage.cloud.google.com/rs-jub-spark-bucket/notebooks/jupyter/Spark-not
 *Data processing/cleaning
 
 *Writeup/presentation
-
+# Video Demo 
 
