@@ -11,18 +11,18 @@ https://github.com/Tafara-Freddie-Hove/MIT805-Project-github/blob/master/MIT805_
 
 # Part 2
 
-*Hadoop-Mapreduce programs
+*AHadoop-Mapreducing programs
 
 *Data Visualisation
 
-*Mapreduce is a key programing model for data  processing  in Hadoop ecosystem
+*TMapReducing and data visualisation links:
+1.Report
+https://github.com/Tafara-Freddie-Hove/MIT805-Project-github/blob/master/Part%202%20%20Report%20(1).pdf
 
-
-# The MapReducing and data visualisation code link:
+2. Code
 file:///C:/Users/tfhove/AppData/Local/Temp/My%20Spark%20Jupyter%20file.slides.html
 
 # Technologies
-
 *Apache Spark
 
 *Virtual Machine
@@ -44,5 +44,6 @@ file:///C:/Users/tfhove/AppData/Local/Temp/My%20Spark%20Jupyter%20file.slides.ht
 *Data processing/cleaning
 
 *Writeup/presentation
-# Video Demo 
+
+*Video Demo 
 
