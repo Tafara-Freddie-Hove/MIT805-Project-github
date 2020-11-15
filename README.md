@@ -16,10 +16,12 @@ https://github.com/Tafara-Freddie-Hove/MIT805-Project-github/blob/master/MIT805_
 *Data Visualisation
 
 *TMapReducing and data visualisation links:
-1.Report
+*1.Report
+
 https://github.com/Tafara-Freddie-Hove/MIT805-Project-github/blob/master/Part%202%20%20Report%20(1).pdf
 
-2. Code
+*2.Code
+
 file:///C:/Users/tfhove/AppData/Local/Temp/My%20Spark%20Jupyter%20file.slides.html
 
 # Technologies
